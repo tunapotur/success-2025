@@ -1,6 +1,13 @@
 {
   "name": "node-api",
   "packageManager": "yarn@4.9.2",
+  "scripts": {
+    "lint": "eslint",
+    "start": "export NODE_ENV=development&&nodemon server.js",
+    "start:prod": "export NODE_ENV=production&&nodemon server.js",
+    "start_win": "set NODE_ENV=development&&nodemon server.js",
+    "start_win:prod": "set NODE_ENV=production&&nodemon server.js"
+  },
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
