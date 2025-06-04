@@ -1,11 +1,17 @@
+const path = require('path');
 const express = require('express');
+const morgan = require('morgan');
+const testRouter = require('./routes/testRoutes');
+
 const app = express();
-const port = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Yeah NodeJs!');
+// Test middleware
+// Those routers contain controllers to check user requests
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  next();
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+app.use('/', testRouter);
+
+module.exports = app;
