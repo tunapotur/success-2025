@@ -9,18 +9,18 @@ process.on('uncaughtException', (err) => {
 });
 
 dotenv.config({ path: './.env' });
-// const DB = process.env.MONGODB_URI;
+const DB = process.env.MONGODB_URI;
 const port = process.env.PORT || 3000;
 
-// mongoose
-//   .connect(DB, {
-//     //TODO bu options ayarlarını incele
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => console.log('DB connection successful!'));
+mongoose
+  .connect(DB, {
+    //TODO bu options ayarlarını incele
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log('DB connection successful!'));
 
 const server = app.listen(port, () => {
   console.log(`App running on port ${port}...`);
