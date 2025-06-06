@@ -3,7 +3,18 @@
 ## Tüm Kullanıcı Şifreleri
 
 Test_1234
+
 MONGODB_DBNAME=success2025
+
+## Örnek Kullanıcı Bilgileri
+
+-1 "name":"Ahmet Tuna POTUR", "email":"tunapotur@example.com",
+-2 "name":"Anna Warren", "email":"anna.warren@example.com",
+-3 "name":"Florence Brooks", "email":"florence.brooks@example.com",
+-4 "name":"Beverley Stone", "email":"beverley.stone@example.com",
+-5 "name":"Bronny,Spacey", "email":"bronny.spacey@example.com",
+-6 "name":"Isiahi,Assad", "email":"isiahi.assad@example.com",
+-7 "name":"Glendon,Ingledow", "email":"glendon.ingledow@example.com",
 
 ## CORS(Politikası) Middleware
 
