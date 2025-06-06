@@ -35,13 +35,6 @@ const createSendToken = (user, statusCode, res) => {
 };
 
 exports.signup = catchAsync(async (req, res, next) => {
-  /**
-   * *const newUser = await User.create(req.body)
-   * eğer bu şekilde olsaydı body üzerinden
-   * herhangi biri kendine admin rolü tanımlayabilirdi.
-   * Alttaki gibi girilecek alanları bir fiil belirtirsek
-   * bu güvenlik açığı da kapanmış olacaktır.
-   */
   const newUser = await User.create({
     name: req.body.name,
     email: req.body.email,

@@ -3,6 +3,7 @@
 ## Tüm Kullanıcı Şifreleri
 
 Test_1234
+MONGODB_DBNAME=success2025
 
 ## CORS(Politikası) Middleware
 

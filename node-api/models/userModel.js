@@ -109,4 +109,8 @@ userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
 
 //TODO kullanıcı şifresini güncelleme ile ilgili sorun olacaktır. Bunu düzelt.
 
-export default mongoose.models.User || mongoose.model('User', userSchema);
+// export default mongoose.models.User || mongoose.model('User', userSchema);
+
+const User = mongoose.models.User || mongoose.model('User', userSchema);
+
+module.exports = User;
