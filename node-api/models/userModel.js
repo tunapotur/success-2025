@@ -49,7 +49,6 @@ const userSchema = new Schema(
       enum: ['system', 'dark', 'light'],
       default: 'system',
     },
-    // TODO: mongoose timestamp özelliği property'lerin update olduğu tarihide kaydediyor. Bunu incele bu şekilde bir düzenlemeye git.
     passwordChangedAt: Date,
     active: {
       type: Boolean,
@@ -106,10 +105,6 @@ userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
   // False means NOT changed
   return false;
 };
-
-//TODO kullanıcı şifresini güncelleme ile ilgili sorun olacaktır. Bunu düzelt.
-
-// export default mongoose.models.User || mongoose.model('User', userSchema);
 
 const User = mongoose.models.User || mongoose.model('User', userSchema);
 
