@@ -11,6 +11,7 @@ router
   .get(successController.getAllSuccesses)
   .post(
     authController.protect,
+    authController.restrictTo('user'),
     successController.setSuccessUserIds,
     successController.createSuccess,
   );
