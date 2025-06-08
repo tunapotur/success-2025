@@ -29,9 +29,7 @@ exports.updateOne = (Model) =>
 
     res.status(200).json({
       status: 'success',
-      data: {
-        data: doc,
-      },
+      data: doc,
     });
   });
 
@@ -41,17 +39,15 @@ exports.createOne = (Model) =>
 
     res.status(201).json({
       status: 'success',
-      data: {
-        data: doc,
-      },
+      data: doc,
     });
   });
 
 exports.getOne = (Model, popOptions) =>
   catchAsync(async (req, res, next) => {
-    console.log('Success Params: ', req.params);
     let query = Model.findById(req.params.id);
     if (popOptions) query = query.populate(popOptions);
+    query.select('-__v -createdAt -updatedAt');
     const doc = await query;
 
     if (!doc) {
@@ -60,9 +56,7 @@ exports.getOne = (Model, popOptions) =>
 
     res.status(200).json({
       status: 'success',
-      data: {
-        data: doc,
-      },
+      data: doc,
     });
   });
 
@@ -78,15 +72,12 @@ exports.getAll = (Model) =>
       .sort()
       .limitFields()
       .paginate();
-    // const doc = await features.query.explain();
     const doc = await features.query;
 
     // SEND RESPONSE
     res.status(200).json({
       status: 'success',
       results: doc.length,
-      data: {
-        data: doc,
-      },
+      data: doc,
     });
   });

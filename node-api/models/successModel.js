@@ -48,6 +48,8 @@ successSchema.pre(/^find/, function (next) {
     path: 'user',
     select: 'name email',
   });
+
+  next();
 });
 
 const Success =
