@@ -16,6 +16,7 @@ export default defineConfig([
       // Kullanılmayan değişken uyarılarında req|res|next|val olanları hariç tut
       'no-unused-vars': ['error', { argsIgnorePattern: 'req|res|next|val' }],
       'no-undef': 'warn',
+      // TODO: no-console warn çalışmıyor.
       'no-console': 'warn',
     },
   },

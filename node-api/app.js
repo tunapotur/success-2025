@@ -14,6 +14,7 @@ const globalErrorHandler = require('./controllers/errorController');
 //Router imports
 const testRouter = require('./routes/testRoutes');
 const userRouter = require('./routes/userRoutes');
+const successRouter = require('./routes/successRouter');
 
 const app = express();
 
@@ -63,6 +64,7 @@ app.use((req, res, next) => {
 // ROUTES MIDDLEWARES
 app.use('/test', testRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/successes', successRouter);
 
 /** Hatlı girilen url girişi uyarısı*/
 app.all('{*splat}', (req, res, next) => {
