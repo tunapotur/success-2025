@@ -62,10 +62,10 @@ exports.getOne = (Model, popOptions) =>
 
 exports.getAll = (Model) =>
   catchAsync(async (req, res, next) => {
-    // TODO burada bir hata var tourId filan yok bizde bunu düzelt
+    // TODO Nested route için yapılan bu düzenleme çözümü pek generic değil. Bunu daha generic bir hale getir.
     // To allow for nested GET reviews on tour (hack)
     let filter = {};
-    if (req.params.tourId) filter = { tour: req.params.tourId };
+    if (req.params.userId) filter = { user: req.params.userId };
 
     const features = new APIFeatures(Model.find(filter), req.query)
       .filter()
