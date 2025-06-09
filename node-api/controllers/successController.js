@@ -11,3 +11,5 @@ exports.setSuccessUserIds = (req, res, next) => {
 exports.getAllSuccesses = factory.getAll(Success);
 exports.getSuccess = factory.getOne(Success);
 exports.createSuccess = factory.createOne(Success);
+exports.updateSuccess = factory.updateOne(Success);
+exports.deleteSuccess = factory.deleteOne(Success);
