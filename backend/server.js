@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+
 const app = require('./app');
 
 process.on('uncaughtException', (err) => {
@@ -11,7 +12,7 @@ process.on('uncaughtException', (err) => {
 dotenv.config({ path: './.env' });
 const DB = process.env.MONGODB_URI;
 const port = process.env.PORT || 3000;
-const dbName = process.env.MONGODB_DBNAME;
+const dbName = process.env.MONGODB_NAME;
 
 mongoose
   .connect(DB, {
